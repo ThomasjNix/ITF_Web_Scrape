@@ -1,6 +1,6 @@
 <h1>This is a repo for my data mining class ITCS 3162 at UNC Charlotte.</h1>
 
-<h2><strong>Group members:</strong></h2> Thomas Nix, Jesus Garcia, and Seth Morris
+<h3><strong>Group members:</strong> Thomas Nix, Jesus Garcia, and Seth Morris </h3>
 
 In this project we are given a large list of URLs for players of the International Tennis Foundation (Juniors),
 and we will need to scrape the data off these links for use in the data mining portion of this project.
@@ -20,10 +20,13 @@ and we will need to scrape the data off these links for use in the data mining p
 
 <li>Run this line in Anaconda CLI to get BeautifulSoup set up: pip install bs4 </li>
 
-<li> Create a new .py file (I call my crawl.py) and include these two lines as imports: <br/> </li>
+<li>Make sure you have git installed <br/>
+https://git-scm.com/</li>
 
-<br/> from urllib.request import urlopen as uReq <br/>
+<li>Create a git repository using the following command in whichever directory you prefer: <br/>
+git init</li>
 
-from bs4 import BeautifulSoup as soup
-
+<li>Clone this project via the following command: <br/>
+git clone https://github.com/ThomasjNix/ITF_Web_Scrape.git
+</li>
 </ul>
