@@ -27,8 +27,8 @@ public class crawl {
 		// Reading in all files from the directory
 		Document playerProfilePage;
 		final File readDirectory = new File("Player_DOMs");
-		Player[] playerArray = new Player[readDirectory.listFiles().length];
-		int playerCounter = 0;
+		HashMap<Integer, Player> playerMap = new HashMap<Integer, Player>();
+		int playerMapIndex = 0;
 		
 		// Looping through each file and gathering player data
 		for (File single_file : readDirectory.listFiles()) {
@@ -37,12 +37,17 @@ public class crawl {
 					.select("#PlayerDiv > div.pn-in.clfx > div > div.playerDetails.fl > ul > li:nth-child(1) > strong")
 					.text();
 			String fullDOB = playerProfilePage.select("#liDOB > strong").text();
-			String yearDOB = fullDOB.substring(fullDOB.length() - 4, fullDOB.length());
+			System.out.println(fullDOB);
+			String yearDOB = "0000";
+			if (fullDOB.length() == 11){
+				yearDOB = fullDOB.substring(7);
+			}
+			
 			int playerYearOfBirth = Integer.parseInt(yearDOB);
 			if (playerYearOfBirth == 1999 || playerYearOfBirth == 2000 || playerYearOfBirth == 2001) {
 				
 				// Creating the new player
-				playerArray[playerCounter] = new Player(playerName, playerYearOfBirth);
+				playerMap.put(playerMapIndex, new Player(playerName, playerYearOfBirth));
 				String grade = null;
 				HashMap<String, String[]> playerScoreCard = new HashMap<String, String[]>();
 				
@@ -156,19 +161,22 @@ public class crawl {
 										}
 
 									}
-									playerArray[playerCounter].updateScorecard(playerScoreCard);
+									playerMap.get(playerMapIndex).updateScorecard(playerScoreCard);
 								}
 							}
 						}
 					}
 				}
+				//Sets up the printable string and adds a new line so the file writer can write by line
+				Player referencePlayer = playerMap.get(playerMapIndex);
+				String line_to_write = referencePlayer.createPrintableInstance().substring(0, referencePlayer.createPrintableInstance().length()-1);
+				
+				line_to_write += "\n";
+				write_file.write(line_to_write);
+				playerMapIndex++;
 			}
 			
-			//Sets up the printable string and adds a new line so the file writer can write by line
-			String line_to_write = playerArray[playerCounter].createPrintableInstance().substring(0, playerArray[playerCounter].createPrintableInstance().length()-1);
-			line_to_write += "\n";
-			write_file.write(line_to_write);
-			playerCounter++;
+		
 		}
 		//Closing the file writer once all files have been processed.
 		write_file.close();

@@ -13,7 +13,7 @@ public class Player {
 	//Create variables to hold player information
 	public String playerName;
 	public int playerYearOfBirth;
-	HashMap<String,String[]> scorecard;
+	HashMap<String,String[]> scorecard = new HashMap<String, String[]>();
 	
 	//Constructor to set player name and year of birth
 	public Player(String name, int yearOfBirth){
