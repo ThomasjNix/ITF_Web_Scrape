@@ -22,8 +22,9 @@ while (index<len(link_array)):
     url = link_array[index]
     request_object  = requests.get(url)
     parsed_html = request_object.text
+
     BSObject = soup(parsed_html, 'lxml')
-    playerName = BSObject.find('h1',class_="hBg")
+    playerName = BSObject.findAll('h1', class_="hBg")
     print(playerName)
 
     #if (len(BSObject.findAll("h1", class_="hBg"))>0):
