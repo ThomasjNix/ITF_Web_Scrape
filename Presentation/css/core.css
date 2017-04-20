@@ -1,0 +1,109 @@
+html{
+  overflow: hidden;
+}
+body{
+  background-color: rgba(0, 113, 57, 0.75);
+}
+hr{
+  border: none;
+  height: 3px;
+  background-color: rgba(0,0,0,0.25);
+  width: 10vw;
+  margin-left: -2.15vw;
+}
+table{
+  margin-top: 2vh;
+}
+.table-description{}
+.tr-clickable{
+  color: white;
+}
+.tr-clickable:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+.pagination{
+  margin-left: 12vw;
+}
+.brand-section{
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,0.25);
+  border: 1px solid black;
+  left: 1vw;
+  width: 10vw;
+  height: 100%;
+}
+.brand-section ul{
+  list-style: none;
+}
+.brand-section li{
+  color: white;
+  font-size: 1.2em;
+  text-align: left;
+  margin-left: -1vw;
+  margin-top: 2vh;
+  font-family: segoe ui;
+  font-style: italic;
+}
+.grade-select{
+  margin-top: 2vh;
+}
+.grade-select, .year-select{
+  list-style: none;
+}
+.grade-select li, .year-select li{
+  display: inline-block;
+  margin: 0 2vw;
+}
+.grade-select p. .year-select p{
+  margin-top: 2vh
+}
+
+.radio-inline{
+  display: inline-block;
+  color: white;
+  font-size: 1.2em;
+  font-family: verdana;
+}
+.dropdown-menu{
+  margin-left: 2vw;
+  margin-top: -2vh;
+  border-radius: 0;
+}
+.search-section, .main-section{
+  margin-left: 12.5%;
+  margin-top: 5vh;
+  background-color: rgba(150,150,150,0.75);
+  border: 1px solid black;
+  width: 75%;
+}
+
+.main-section{
+  height: 90vh;
+  box-shadow: 0 0 5px 2px black;
+}
+tr .player-td{
+  color: white;
+  font-size: 1.5em;
+  border-bottom: 1px solid black;
+  padding: 2px 0;
+}
+.header-content th a{
+  font-size: 1.5em;
+  color: black;
+}
+#submit_button{
+  padding: 5px;
+  border-radius: 5px;
+  font-family: segoe;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin: 5vh 2vh 2vw 2vw;
+}
+
+#dropdown_year_button{
+  margin: 2vh 2vw;
+}
